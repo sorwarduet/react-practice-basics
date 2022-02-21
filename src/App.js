@@ -1,12 +1,20 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import MainComponent from './components/MainComponent';
+import store from './redux/store';
 
 
 const App=()=>{
 
    return(
-    <MainComponent/>
+      <Provider store={store}>
+         <BrowserRouter>
+              <MainComponent/>
+         </BrowserRouter>
+  
+      </Provider>
    );
 
 }
